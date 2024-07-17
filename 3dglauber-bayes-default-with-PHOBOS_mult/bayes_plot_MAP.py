@@ -59,12 +59,20 @@ for s in system_strs:
         mean = mean[obs].flatten(); err = (np.diagonal(np.abs(cov[obs, obs][0])) ** 0.5);
         is_mult = ("dN" in obs) or ("dET" in obs)
         if is_mult and transform_multiplicities:
-            #err = np.exp(mean+err) - np.exp(mean)
+            err = np.exp(mean+err) - np.exp(mean)
             mean = np.exp(mean)
         plt.plot(x_bins,mean,'-r')
         #plt.fill_between(x_bins,mean-err,mean+err,color='r',alpha=0.25)
 
+        # compute chi2 for the observable
+        dof = len(mean)
 
+        chi2 = np.sum((obsdata - mean)**2/(obsdata_err+err)**2)
+
+        chi2_nu = chi2/dof
+        chi2_nu = np.round(chi2_nu,3)
+
+        ax.text(.05, .95, '$\u03C7^2$=' + str(chi2_nu), horizontalalignment='left', verticalalignment='top', transform=ax.transAxes, fontsize = 9)
         #ax.text(.95, .95, str(len(x_bins)) + ' bins', horizontalalignment='right', verticalalignment='top', transform=ax.transAxes)
         ax.text(.05, .05, str(obs), horizontalalignment='left', verticalalignment='bottom', transform=ax.transAxes, fontsize = 7)
         plot_num += 1
