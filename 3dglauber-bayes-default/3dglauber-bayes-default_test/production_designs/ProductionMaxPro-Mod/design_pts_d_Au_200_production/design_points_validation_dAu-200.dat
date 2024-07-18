@@ -1,0 +1,6 @@
+idx,ylossParam4At2,ylossParam4At4,ylossParam4At6,ylossParam4var,remnant_energy_loss_fraction,shadowing_factor,tau_form_mean,BG,string_source_sigma_x,string_source_sigma_eta,stringTransverseShiftFrac,shear_viscosity_3_eta_over_s_T_kink_in_GeV,shear_viscosity_3_eta_over_s_low_T_slope_in_GeV,shear_viscosity_3_eta_over_s_high_T_slope_in_GeV,shear_viscosity_3_eta_over_s_at_kink,bulk_viscosity_3_zeta_over_s_max,bulk_viscosity_3_zeta_over_s_T_peak_in_GeV,bulk_viscosity_3_zeta_over_s_width_in_GeV,bulk_viscosity_3_zeta_over_s_lambda_asymm,eps_switch
+0,1.122,2.876,3.222,0.387,0.241,0.029,0.7864,21.987,0.3108,0.6649,0.489,0.24713,0.415,0.425,0.05541,0.12533,0.27174,0.02663,0.2234,0.5005
+1,1.182,0.692,0.726,0.137,0.475,0.659,0.7448,17.341,0.258,0.2813,0.041,0.14377,-0.065,0.683,0.02311,0.14167,0.2217,0.11463,0.187,0.2855
+2,0.654,2.092,2.874,0.575,0.273,0.231,0.3144,11.913,0.2244,0.3863,0.523,0.16417,-1.259,-0.295,0.14851,0.06643,0.18498,0.13937,-0.0538,0.2395
+3,1.782,1.06,4.362,0.381,0.875,0.537,0.5672,15.317,0.1308,0.4885,0.163,0.16145,-1.193,0.827,0.12077,0.06605,0.15834,0.04362,-0.4626,0.2895
+4,1.07,2.484,3.03,0.717,0.483,0.415,0.5624,18.537,0.1836,0.3485,0.551,0.24339,-0.617,1.115,0.09227,0.01969,0.18066,0.13412,0.2486,0.3555
