@@ -123,12 +123,12 @@ expt_and_obs_for_system = {
             },
 
             "PHENIX" : {
-                "v22_pt_cen_00_10_PHEN" : PHENIX_vn_pt,
-                "v22_pt_cen_10_20_PHEN" : PHENIX_vn_pt,
-                "v22_pt_cen_20_30_PHEN" : PHENIX_vn_pt,
-                "v22_pt_cen_30_40_PHEN" : PHENIX_vn_pt,
-                "v22_pt_cen_40_50_PHEN" : PHENIX_vn_pt,
-                "v22_pt_cen_50_60_PHEN" : PHENIX_vn_pt,
+                "v22_pt_cen_00_10_PHEN" : PHENIX_vn_pt[:5],
+                "v22_pt_cen_10_20_PHEN" : PHENIX_vn_pt[:5],
+                "v22_pt_cen_20_30_PHEN" : PHENIX_vn_pt[:5],
+                "v22_pt_cen_30_40_PHEN" : PHENIX_vn_pt[:5],
+                "v22_pt_cen_40_50_PHEN" : PHENIX_vn_pt[:5],
+                "v22_pt_cen_50_60_PHEN" : PHENIX_vn_pt[:5],
 
                 # "v32_pt_cen_00_10_PHEN" : PHENIX_vn_pt,
                 # "v32_pt_cen_10_20_PHEN" : PHENIX_vn_pt,
@@ -158,14 +158,14 @@ expt_and_obs_for_system = {
             },
 
             "STAR" : {
-                'v22_pt_cen_00_10_STAR'     : STAR_dAu_vn_pt,
+                'v22_pt_cen_00_10_STAR'     : STAR_dAu_vn_pt[:5],
                 # 'v32_pt_cen_00_10_STAR'     : STAR_dAu_vn_pt,
             },
 
             "PHENIX" : {
                 'v22_eta_cen_00_05_PHEN'    : PHENIX_v22_rap_bins[10:],
 
-                'v22_pt_cen_00_05_PHEN'     : PHENIX_dAu_vn_pt,
+                'v22_pt_cen_00_05_PHEN'     : PHENIX_dAu_vn_pt[:5],
                 # 'v32_pt_cen_00_05_PHEN'     : PHENIX_dAu_vn_pt,
             }
         },
@@ -287,8 +287,8 @@ SystemsInfo = {"{:s}-{:s}-{:d}".format(*s): systems_setting(*s) for s in systems
 if "d-Au-200" in system_strs:
     SystemsInfo["d-Au-200"]["run_id"] = "production_375pts_d_Au_200"
     SystemsInfo["d-Au-200"]["run_dir"] = "production_375pts_d_Au_200"
-    SystemsInfo["d-Au-200"]["n_design"] = 375
-    SystemsInfo["d-Au-200"]["n_validation"] = 44
+    SystemsInfo["d-Au-200"]["n_design"] = 414
+    SystemsInfo["d-Au-200"]["n_validation"] = 5
     SystemsInfo["d-Au-200"]["design_remove_idx"] = [] #list(delete_design_pts_set)
     SystemsInfo["d-Au-200"]["npc"] = 9
     SystemsInfo["d-Au-200"]["MAP_obs_file"] =  "None"
@@ -298,8 +298,8 @@ if "d-Au-200" in system_strs:
 if "Au-Au-200" in system_strs:
     SystemsInfo["Au-Au-200"]["run_id"] = "production_375pts_Au_Au_200"
     SystemsInfo["Au-Au-200"]["run_dir"] = "production_375pts_Au_Au_200"
-    SystemsInfo["Au-Au-200"]["n_design"] = 375
-    SystemsInfo["Au-Au-200"]["n_validation"] = 44
+    SystemsInfo["Au-Au-200"]["n_design"] = 414
+    SystemsInfo["Au-Au-200"]["n_validation"] = 5
     SystemsInfo["Au-Au-200"]["design_remove_idx"] = [] #list(delete_design_pts_set)
     SystemsInfo["Au-Au-200"]["npc"] = 6
     SystemsInfo["Au-Au-200"]["MAP_obs_file"] =  "None"

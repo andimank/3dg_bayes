@@ -96,9 +96,9 @@ obs_cent_list = {
 
         'v22_eta_cen_00_05_PHEN'    : PHENIX_v22_rap_bins[10:],
 
-        'v22_pt_cen_00_05_PHEN'     : PHENIX_dAu_vn_pt,
+        'v22_pt_cen_00_05_PHEN'     : PHENIX_dAu_vn_pt[:5],
         # 'v32_pt_cen_00_05_PHEN'     : PHENIX_dAu_vn_pt,
-        'v22_pt_cen_00_10_STAR'     : STAR_dAu_vn_pt,
+        'v22_pt_cen_00_10_STAR'     : STAR_dAu_vn_pt[:5],
         # 'v32_pt_cen_00_10_STAR'     : STAR_dAu_vn_pt,
 
     },
@@ -156,12 +156,12 @@ obs_cent_list = {
         "v22_eta_cen_15_25_PHOB" : PHOBOS_v2_cen,
         "v22_eta_cen_25_50_PHOB" : PHOBOS_v2_cen,
 
-        "v22_pt_cen_00_10_PHEN" : PHENIX_vn_pt,
-        "v22_pt_cen_10_20_PHEN" : PHENIX_vn_pt,
-        "v22_pt_cen_20_30_PHEN" : PHENIX_vn_pt,
-        "v22_pt_cen_30_40_PHEN" : PHENIX_vn_pt,
-        "v22_pt_cen_40_50_PHEN" : PHENIX_vn_pt,
-        "v22_pt_cen_50_60_PHEN" : PHENIX_vn_pt,
+        "v22_pt_cen_00_10_PHEN" : PHENIX_vn_pt[:5],
+        "v22_pt_cen_10_20_PHEN" : PHENIX_vn_pt[:5],
+        "v22_pt_cen_20_30_PHEN" : PHENIX_vn_pt[:5],
+        "v22_pt_cen_30_40_PHEN" : PHENIX_vn_pt[:5],
+        "v22_pt_cen_40_50_PHEN" : PHENIX_vn_pt[:5],
+        "v22_pt_cen_50_60_PHEN" : PHENIX_vn_pt[:5],
 
         # "v32_pt_cen_00_10_PHEN" : PHENIX_vn_pt,
         # "v32_pt_cen_10_20_PHEN" : PHENIX_vn_pt,

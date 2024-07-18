@@ -204,7 +204,7 @@ for design_split in ['./Text_files_MAP/Simulation_with_flow','./Text_files_MAP/F
                 Simulation.write('v2_AuAu200' + cen + '_cen[' + str(eta_range[0]) + ' ' + str(eta_range[1]) + '],')
         # Loop for the PHENIX AuAu v2(pt) observable names
     for cen in ['0_10','10_20','20_30','30_40','40_50','50_60']:
-        for pt_range in PHENIX_vn_pt:
+        for pt_range in PHENIX_vn_pt[:5]: # exclude high pT bins
             with open(design_split, mode='a') as Simulation:
                     # Define observable naming convention
                 Simulation.write('v2_PHEN_AuAu200' + cen + '_cen[' + str(pt_range[0]) + ' ' + str(pt_range[1]) + '],')
@@ -226,7 +226,7 @@ for design_split in ['./Text_files_MAP/Simulation_with_flow','./Text_files_MAP/F
                 # Define observable naming convention
             Simulation.write('v2_dAu200_0_5_cen[' + str(eta_range[0]) + ' ' + str(eta_range[1]) + '],')
         # Loop for the PHENIX dAu v2(pt) observable naming convention
-    for pt_range in PHENIX_dAu_vn_pt:
+    for pt_range in PHENIX_dAu_vn_pt[:5]: # exclude high pT bins
         with open(design_split, mode='a') as Simulation:
                 # Define observable naming convention
             Simulation.write('v2_PHEN_dAu200_0_5_cen[' + str(pt_range[0]) + ' ' + str(pt_range[1]) + '],')
@@ -236,7 +236,7 @@ for design_split in ['./Text_files_MAP/Simulation_with_flow','./Text_files_MAP/F
     #             # Define observable naming convention
     #         Simulation.write('v3_PHEN_dAu200_0_5_cen[' + str(pt_range[0]) + ' ' + str(pt_range[1]) + '],')
         # Loop for the STAR dAu v2(pt) observable naming convention
-    for pt_range in STAR_dAu_vn_pt:
+    for pt_range in STAR_dAu_vn_pt[:5]: # exclude high pT bins
         with open(design_split, mode='a') as Simulation:
                 # Define observable naming convention
             Simulation.write('v2_STAR_dAu200_0_5_cen[' + str(pt_range[0]) + ' ' + str(pt_range[1]) + '],')
@@ -298,9 +298,9 @@ for design_split in ['./Text_files_MAP/Simulation_with_flow','./Text_files_MAP/F
         # Define the design point ranges for the simulation and validation sets,
         # The design_max for the validation will not throw an error if greater than the total number of designs due to j==i flag below
     if design_split == './Text_files_MAP/Simulation_with_flow':
-        design_min = 0; design_max = 375
+        design_min = 0; design_max = 414
     if design_split == './Text_files_MAP/Flow_Validation_Simulation':
-        design_min = 375; design_max = 500
+        design_min = 414; design_max = 420
 
         # Loop through the training or the validation design point range
     for i in range(design_min,design_max):
@@ -373,6 +373,62 @@ for design_split in ['./Text_files_MAP/Simulation_with_flow','./Text_files_MAP/F
                                 elif obsfile == 'mnpt_k___int__cent_______STAR___AuAu________':
                                     idx_bin = [column_idx,'dummy']
                                     for k in range(len(splitline))[:7]:
+                                        Simulation.write(splitline[k] + ',')
+                                        column_idx+=1
+                                    idx_bin[1] = column_idx
+                                    obs_indices_dict[obsfile_list[obsfile]] = idx_bin
+                                elif obsfile == 'v22______diff_pt___00_10_PHENIX_AuAu________':
+                                    idx_bin = [column_idx,'dummy']
+                                    for k in range(len(splitline))[:5]:
+                                        Simulation.write(splitline[k] + ',')
+                                        column_idx+=1
+                                    idx_bin[1] = column_idx
+                                    obs_indices_dict[obsfile_list[obsfile]] = idx_bin
+                                elif obsfile == 'v22______diff_pt___10_20_PHENIX_AuAu________':
+                                    idx_bin = [column_idx,'dummy']
+                                    for k in range(len(splitline))[:5]:
+                                        Simulation.write(splitline[k] + ',')
+                                        column_idx+=1
+                                    idx_bin[1] = column_idx
+                                    obs_indices_dict[obsfile_list[obsfile]] = idx_bin
+                                elif obsfile == 'v22______diff_pt___20_30_PHENIX_AuAu________':
+                                    idx_bin = [column_idx,'dummy']
+                                    for k in range(len(splitline))[:5]:
+                                        Simulation.write(splitline[k] + ',')
+                                        column_idx+=1
+                                    idx_bin[1] = column_idx
+                                    obs_indices_dict[obsfile_list[obsfile]] = idx_bin
+                                elif obsfile == 'v22______diff_pt___30_40_PHENIX_AuAu________':
+                                    idx_bin = [column_idx,'dummy']
+                                    for k in range(len(splitline))[:5]:
+                                        Simulation.write(splitline[k] + ',')
+                                        column_idx+=1
+                                    idx_bin[1] = column_idx
+                                    obs_indices_dict[obsfile_list[obsfile]] = idx_bin
+                                elif obsfile == 'v22______diff_pt___40_50_PHENIX_AuAu________':
+                                    idx_bin = [column_idx,'dummy']
+                                    for k in range(len(splitline))[:5]:
+                                        Simulation.write(splitline[k] + ',')
+                                        column_idx+=1
+                                    idx_bin[1] = column_idx
+                                    obs_indices_dict[obsfile_list[obsfile]] = idx_bin
+                                elif obsfile == 'v22______diff_pt___50_60_PHENIX_AuAu________':
+                                    idx_bin = [column_idx,'dummy']
+                                    for k in range(len(splitline))[:5]:
+                                        Simulation.write(splitline[k] + ',')
+                                        column_idx+=1
+                                    idx_bin[1] = column_idx
+                                    obs_indices_dict[obsfile_list[obsfile]] = idx_bin
+                                elif obsfile == 'v22______diff_pt___00_10_STAR___dAu_________':
+                                    idx_bin = [column_idx,'dummy']
+                                    for k in range(len(splitline))[:5]:
+                                        Simulation.write(splitline[k] + ',')
+                                        column_idx+=1
+                                    idx_bin[1] = column_idx
+                                    obs_indices_dict[obsfile_list[obsfile]] = idx_bin
+                                elif obsfile == 'v22______diff_pt___00_05_PHENIX_dAu_________':
+                                    idx_bin = [column_idx,'dummy']
+                                    for k in range(len(splitline))[:5]:
                                         Simulation.write(splitline[k] + ',')
                                         column_idx+=1
                                     idx_bin[1] = column_idx
