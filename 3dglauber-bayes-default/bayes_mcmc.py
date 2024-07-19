@@ -429,6 +429,10 @@ class Chain:
         """
         X = np.array(X, copy=False, ndmin=2)
 
+        monotonicity = True
+        if (X[0,1] > X[0,1]) or (X[0,1] > X[0,2]):
+            monotonicity = False
+
         lp = np.zeros(X.shape[0])
 
         inside = np.all((X > self.min) & (X < self.max), axis=1)
@@ -460,7 +464,12 @@ class Chain:
                 cov += self._expt_cov[sys]
 
                 # compute log likelihood at each point, w/o normalization
-                lp[inside] += list(map(mvn_loglike, dY, cov))
+
+                if monotonicity == False:
+                    lp[inside] += -np.inf
+                else:
+                    lp[inside] += list(map(mvn_loglike,dY, cov))
+                #lp[inside] += list(map(mvn_loglike, dY, cov))
 
             # Remove extra_std but leave framework for it in place
             ## add prior for extra_std (model sys error)
@@ -660,7 +669,7 @@ class Chain:
             else:
                 print('------ Running MCMC ------')
                 sampler = LoggingEnsembleSampler(
-                    nwalkers, self.ndim, self.log_posterior, pool=self
+                    nwalkers, self.ndim, self.log_posterior, #pool=self
                 )
                 if burn:
                     logging.info("no existing chain found, starting initial burn-in")
@@ -676,14 +685,14 @@ class Chain:
                             -nwalkers:
                         ]
                     ]
-                    print(X0)
-                    print(np.shape(X0[0]))
-                    print(X0[0])
-                    print('last point of chain')
+                    #print(X0)
+                    #print(np.shape(X0[0]))
+                    #print(X0[0])
+                    #print('last point of chain')
 
                     X0 = sampler.run_mcmc(
                         X0, nburnsteps - nburn0, status=status, store=False    # used to be "storechain"? bug?
-                    )[0]
+                    )#[0]
                     sampler.reset()
                     logging.info("burn-in complete, starting production")
                 else:
