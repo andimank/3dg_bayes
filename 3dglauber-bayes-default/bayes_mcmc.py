@@ -430,7 +430,7 @@ class Chain:
         X = np.array(X, copy=False, ndmin=2)
 
         monotonicity = True
-        if (X[0,1] > X[0,1]) or (X[0,1] > X[0,2]):
+        if (X[0,0] > X[0,1]) or (X[0,1] > X[0,2]):
             monotonicity = False
 
         lp = np.zeros(X.shape[0])
