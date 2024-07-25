@@ -110,6 +110,10 @@ obs_index_list = {
         #'dNdeta_eta_cen_20_40_PHOB' : obs_indices_dict['dNdeta_eta_cen_20_40_PHOB'],
         #'dNdeta_eta_cen_40_60_PHOB' : obs_indices_dict['dNdeta_eta_cen_40_60_PHOB'],
 
+        'dNdeta_eta_cen_00_05_PHEN'     : obs_indices_dict['dNdeta_eta_cen_00_05_PHEN'],
+        'dNdeta_eta_cen_05_10_PHEN'     : obs_indices_dict['dNdeta_eta_cen_05_10_PHEN'],
+        'dNdeta_eta_cen_10_20_PHEN'     : obs_indices_dict['dNdeta_eta_cen_10_20_PHEN'],
+
         'v22_eta_cen_00_05_PHEN'    : obs_indices_dict['v22_eta_cen_00_05_PHEN'],
 
         'v22_pt_cen_00_05_PHEN'     : obs_indices_dict['v22_pt_cen_00_05_PHEN'],

@@ -68,6 +68,10 @@ PHENIX_meanpT_cen = np.array([ [0,5],[5,10],[10,15],[15,20],[20,30],[30,40],[40,
 # 5 bins
 STAR_rn_eta_bins = np.array([[0,0.2],[0.2,0.4],[0.4,0.6],[0.6,0.8],[0.8,1.0]])
 
+# 34 bins
+PHENIX_dAu_dNdeta_eta_bins = np.array([[-2.6, -2.5], [-2.5, -2.4], [-2.4, -2.3], [-2.3, -2.2], [-2.2, -2.1], [-2.1, -2.0], [-2.0, -1.9], [-1.9, -1.8], [-1.8, -1.7], [-1.7, -1.6], [-1.6, -1.5], [-1.5, -1.4], [-1.4, -1.3], [-0.4, -0.3], [-0.3, -0.2], [-0.2, -0.1], [-0.1, 0.0], [0.0, 0.1], [0.1, 0.2], [0.2, 0.3], [0.3, 0.4], [1.3, 1.4], [1.4, 1.5], [1.5, 1.6], [1.6, 1.7], [1.7, 1.8], [1.8, 1.9], [1.9, 2.0], [2.0, 2.1], [2.1, 2.2], [2.2, 2.3], [2.3, 2.4], [2.4, 2.5], [2.5, 2.6]])
+
+
 # the observables which will be used for parameter estimation
 # inactive observables for an active system need to be commented out here
 obs_cent_list = {
@@ -93,6 +97,10 @@ obs_cent_list = {
         'dNdeta_eta_cen_00_20_PHOB' : PHOBOS_mult_rap_bins,
         #'dNdeta_eta_cen_20_40_PHOB' : PHOBOS_mult_rap_bins,
         #'dNdeta_eta_cen_40_60_PHOB' : PHOBOS_mult_rap_bins,
+
+        'dNdeta_eta_cen_00_05_PHEN'  : PHENIX_dAu_dNdeta_eta_bins,
+        'dNdeta_eta_cen_05_10_PHEN'  : PHENIX_dAu_dNdeta_eta_bins,
+        'dNdeta_eta_cen_10_20_PHEN'  : PHENIX_dAu_dNdeta_eta_bins,
 
         'v22_eta_cen_00_05_PHEN'    : PHENIX_v22_rap_bins[10:],
 

@@ -163,6 +163,12 @@ expt_and_obs_for_system = {
             },
 
             "PHENIX" : {
+
+                'dNdeta_eta_cen_00_05_PHEN'     : PHENIX_dAu_dNdeta_eta_bins,
+                'dNdeta_eta_cen_05_10_PHEN'     : PHENIX_dAu_dNdeta_eta_bins,
+                'dNdeta_eta_cen_10_20_PHEN'     : PHENIX_dAu_dNdeta_eta_bins,
+
+
                 'v22_eta_cen_00_05_PHEN'    : PHENIX_v22_rap_bins[10:],
 
                 'v22_pt_cen_00_05_PHEN'     : PHENIX_dAu_vn_pt[:5],

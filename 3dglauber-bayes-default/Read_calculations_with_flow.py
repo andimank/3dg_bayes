@@ -45,9 +45,10 @@ PHENIX_dAu_vn_pt = [ [0.4,0.6],[0.6,0.8],[0.8,1.0],[1.0,1.2],[1.2,1.4],[1.4,1.6]
 STAR_dAu_vn_pt = [ [0.2,0.4],[0.4,0.6],[0.6,0.8],[0.8,1.1],[1.1,1.4],[1.4,1.7],[1.7,2.0] ]
 # bins
 STAR_vn_int_cen = STAR_meanpT_cen
-
+# 5 bins
 STAR_rn_eta_bins = [[0,0.2],[0.2,0.4],[0.4,0.6],[0.6,0.8],[0.8,1.0]]
-
+# 34 bins
+PHENIX_dAu_dNdeta_eta_bins = [[-2.6, -2.5], [-2.5, -2.4], [-2.4, -2.3], [-2.3, -2.2], [-2.2, -2.1], [-2.1, -2.0], [-2.0, -1.9], [-1.9, -1.8], [-1.8, -1.7], [-1.7, -1.6], [-1.6, -1.5], [-1.5, -1.4], [-1.4, -1.3], [-0.4, -0.3], [-0.3, -0.2], [-0.2, -0.1], [-0.1, 0.0], [0.0, 0.1], [0.1, 0.2], [0.2, 0.3], [0.3, 0.4], [1.3, 1.4], [1.4, 1.5], [1.5, 1.6], [1.6, 1.7], [1.7, 1.8], [1.8, 1.9], [1.9, 2.0], [2.0, 2.1], [2.1, 2.2], [2.2, 2.3], [2.3, 2.4], [2.4, 2.5], [2.5, 2.6]]
 
 
 obs_indices_dict = {}
@@ -93,9 +94,15 @@ obsfile_list = {
 'dNdeta___diff_eta__40_45_PHOBOS_AuAu________' : "dNdeta_eta_cen_40_45_PHOB",
 'dNdeta___diff_eta__45_50_PHOBOS_AuAu________' : "dNdeta_eta_cen_45_50_PHOB",
 
-'dNdeta___diff_eta__00_20_PHOBOS_dAu_________': 'dNdeta_eta_cen_00_20_PHOB',
+'dNdeta___diff_eta__00_20_PHOBOS_dAu_________' : 'dNdeta_eta_cen_00_20_PHOB',
 #'dNdeta___diff_eta__20_40_PHOBOS_dAu_________': 'dNdeta_eta_cen_20_40_PHOB',
 #'dNdeta___diff_eta__40_60_PHOBOS_dAu_________': 'dNdeta_eta_cen_40_60_PHOB',
+
+'dNdeta___diff_eta__00_05_PHENIX_dAu_________' : 'dNdeta_eta_cen_00_05_PHEN',
+'dNdeta___diff_eta__05_10_PHENIX_dAu_________' : 'dNdeta_eta_cen_05_10_PHEN',
+'dNdeta___diff_eta__10_20_PHENIX_dAu_________' : 'dNdeta_eta_cen_10_20_PHEN',
+
+
 #
 'v22______diff_eta__20_70_STAR___AuAu________': "v22_eta_cen_20_70_STAR",
 'v22______diff_eta__03_15_PHOBOS_AuAu________': "v22_eta_cen_03_15_PHOB",
@@ -190,6 +197,14 @@ for design_split in ['./Text_files_MAP/Simulation_with_flow','./Text_files_MAP/F
             with open(design_split, mode='a') as Simulation:
                     # Define observable naming convention
                 Simulation.write('dNdeta_dAu200_' + cen + '_cen[' + str(eta_range[0]) + ' ' + str(eta_range[1]) + '],')
+
+        # Loop for the dAu dNdeta PHENIX observable names
+    for cen in ['0_5','5_10','10_20']: #, '20_40', '40_60']:
+        for eta_range in PHENIX_dAu_dNdeta_eta_bins:
+            with open(design_split, mode='a') as Simulation:
+                    # Define observable naming convention
+                Simulation.write('dNdeta_dAu200_' + cen + '_cen[' + str(eta_range[0]) + ' ' + str(eta_range[1]) + '],')
+
 
         # Loop for the STAR AuAu v2 observable names
     for eta_range in S_cen:
