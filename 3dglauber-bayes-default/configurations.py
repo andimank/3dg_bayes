@@ -51,132 +51,16 @@ closure_val_pt = 0
 ### USEFUL LABELS / DICTIONARIES ###
 ####################################
 
-# only using data from these experimental collabs
-# (if the bayes_dtype is changed to include experiment this array is no longer needed - currently used in
-# reading exp data into the current bayes_dtype format)
-expt_and_obs_for_system = {
+# dict for exchanging the experiment abbreviations for the full names
+expt_label_dict = {
+
+'BRAH' : 'BRAHMS',
+'PHOB' : 'PHOBOS',
+'STAR' : 'STAR',
+'PHEN' : 'PHENIX',
 
 
-
-        "Au-Au-200": {
-
-            # "BRAHMS" : {
-                # "dNdeta_eta_cen_00_05_BRAH" : BRAHMS_mult_rap_bins,
-                # "dNdeta_eta_cen_05_10_BRAH" : BRAHMS_mult_rap_bins,
-                # "dNdeta_eta_cen_10_20_BRAH" : BRAHMS_mult_rap_bins,
-                # "dNdeta_eta_cen_20_30_BRAH" : BRAHMS_mult_rap_bins,
-                # "dNdeta_eta_cen_30_40_BRAH" : BRAHMS_mult_rap_bins,
-                # "dNdeta_eta_cen_40_50_BRAH" : BRAHMS_mult_rap_bins,
-
-                # "dNdeta_eta_cen_00_05_BRAH_2" : BRAHMS_mult_rap_bins,
-                # "dNdeta_eta_cen_05_10_BRAH_2" : BRAHMS_mult_rap_bins,
-                # "dNdeta_eta_cen_10_20_BRAH_2" : BRAHMS_mult_rap_bins,
-                # "dNdeta_eta_cen_20_30_BRAH_2" : BRAHMS_mult_rap_bins,
-                # "dNdeta_eta_cen_30_40_BRAH_2" : BRAHMS_mult_rap_bins,
-                # "dNdeta_eta_cen_40_50_BRAH_2" : BRAHMS_mult_rap_bins,
-                #
-                # "dNdeta_eta_cen_00_05_BRAH_3" : BRAHMS_mult_rap_bins,
-                # "dNdeta_eta_cen_05_10_BRAH_3" : BRAHMS_mult_rap_bins,
-                # "dNdeta_eta_cen_10_20_BRAH_3" : BRAHMS_mult_rap_bins,
-                # "dNdeta_eta_cen_20_30_BRAH_3" : BRAHMS_mult_rap_bins,
-                # "dNdeta_eta_cen_30_40_BRAH_3" : BRAHMS_mult_rap_bins,
-                # "dNdeta_eta_cen_40_50_BRAH_3" : BRAHMS_mult_rap_bins,
-
-
-                # "dNdeta_eta_cen_00_05_frwd_BRAH" : BRAHMS_mult_large_rap_bins,
-                # "dNdeta_eta_cen_05_10_frwd_BRAH" : BRAHMS_mult_large_rap_bins,
-                # "dNdeta_eta_cen_10_20_frwd_BRAH" : BRAHMS_mult_large_rap_bins,
-                # "dNdeta_eta_cen_20_30_frwd_BRAH" : BRAHMS_mult_large_rap_bins,
-                # "dNdeta_eta_cen_30_40_frwd_BRAH" : BRAHMS_mult_large_rap_bins,
-                # "dNdeta_eta_cen_40_50_frwd_BRAH" : BRAHMS_mult_large_rap_bins,
-            # },
-
-            "PHOBOS" : {
-                "v22_eta_cen_03_15_PHOB" : PHOBOS_v2_cen,
-                "v22_eta_cen_15_25_PHOB" : PHOBOS_v2_cen,
-                "v22_eta_cen_25_50_PHOB" : PHOBOS_v2_cen,
-
-                "dNdeta_eta_cen_00_03_PHOB" : PHOBOS_mult_rap_bins,
-                "dNdeta_eta_cen_03_06_PHOB" : PHOBOS_mult_rap_bins,
-                "dNdeta_eta_cen_06_10_PHOB" : PHOBOS_mult_rap_bins,
-                "dNdeta_eta_cen_10_15_PHOB" : PHOBOS_mult_rap_bins,
-                "dNdeta_eta_cen_15_20_PHOB" : PHOBOS_mult_rap_bins,
-                "dNdeta_eta_cen_20_25_PHOB" : PHOBOS_mult_rap_bins,
-                "dNdeta_eta_cen_25_30_PHOB" : PHOBOS_mult_rap_bins,
-                "dNdeta_eta_cen_30_35_PHOB" : PHOBOS_mult_rap_bins,
-                "dNdeta_eta_cen_35_40_PHOB" : PHOBOS_mult_rap_bins,
-                "dNdeta_eta_cen_40_45_PHOB" : PHOBOS_mult_rap_bins,
-                "dNdeta_eta_cen_45_50_PHOB" : PHOBOS_mult_rap_bins,
-            },
-
-            "STAR" : {
-                "v22_eta_cen_20_70_STAR" : STAR_v22_rap_bins,
-
-                "v22_int_STAR" : STAR_meanpT_cen[:6],
-                "v32_int_STAR" : STAR_meanpT_cen[:6],
-
-                #"meanpT_pi_STAR" : STAR_meanpT_cen[:7],
-                #"meanpT_k_STAR" : STAR_meanpT_cen[:7],
-                #"r2_eta_cen_10_40_STAR" : STAR_rn_eta_bins,
-                #"r3_eta_cen_10_40_STAR" : STAR_rn_eta_bins,
-
-            },
-
-            "PHENIX" : {
-                "v22_pt_cen_00_10_PHEN" : PHENIX_vn_pt[:5],
-                "v22_pt_cen_10_20_PHEN" : PHENIX_vn_pt[:5],
-                "v22_pt_cen_20_30_PHEN" : PHENIX_vn_pt[:5],
-                "v22_pt_cen_30_40_PHEN" : PHENIX_vn_pt[:5],
-                "v22_pt_cen_40_50_PHEN" : PHENIX_vn_pt[:5],
-                "v22_pt_cen_50_60_PHEN" : PHENIX_vn_pt[:5],
-
-                # "v32_pt_cen_00_10_PHEN" : PHENIX_vn_pt,
-                # "v32_pt_cen_10_20_PHEN" : PHENIX_vn_pt,
-                # "v32_pt_cen_20_30_PHEN" : PHENIX_vn_pt,
-                # "v32_pt_cen_30_40_PHEN" : PHENIX_vn_pt,
-                # "v32_pt_cen_40_50_PHEN" : PHENIX_vn_pt,
-                # "v32_pt_cen_50_60_PHEN" : PHENIX_vn_pt,
-                #
-                # "v42_pt_cen_00_10_PHEN" : PHENIX_vn_pt,
-                # "v42_pt_cen_10_20_PHEN" : PHENIX_vn_pt,
-                # "v42_pt_cen_20_30_PHEN" : PHENIX_vn_pt,
-                # "v42_pt_cen_30_40_PHEN" : PHENIX_vn_pt,
-                # "v42_pt_cen_40_50_PHEN" : PHENIX_vn_pt,
-                #"v42_pt_cen_50_60_PHEN" : PHENIX_vn_pt,
-
-                "meanpT_pi_PHEN" : PHENIX_meanpT_cen[:8],
-                #"meanpT_k_PHEN"  : PHENIX_meanpT_cen[:8],
-            },
-        },
-
-        "d-Au-200": {
-
-            "PHOBOS" : {
-                'dNdeta_eta_cen_00_20_PHOB' : PHOBOS_mult_rap_bins,
-                #'dNdeta_eta_cen_20_40_PHOB' : PHOBOS_mult_rap_bins,
-                #'dNdeta_eta_cen_40_60_PHOB' : PHOBOS_mult_rap_bins,
-            },
-
-            "STAR" : {
-                'v22_pt_cen_00_10_STAR'     : STAR_dAu_vn_pt[:5],
-                # 'v32_pt_cen_00_10_STAR'     : STAR_dAu_vn_pt,
-            },
-
-            "PHENIX" : {
-
-                'dNdeta_eta_cen_00_05_PHEN'     : PHENIX_dAu_dNdeta_eta_bins,
-                'dNdeta_eta_cen_05_10_PHEN'     : PHENIX_dAu_dNdeta_eta_bins,
-                'dNdeta_eta_cen_10_20_PHEN'     : PHENIX_dAu_dNdeta_eta_bins,
-
-
-                'v22_eta_cen_00_05_PHEN'    : PHENIX_v22_rap_bins[10:],
-
-                'v22_pt_cen_00_05_PHEN'     : PHENIX_dAu_vn_pt[:5],
-                # 'v32_pt_cen_00_05_PHEN'     : PHENIX_dAu_vn_pt,
-            }
-        },
-
-    }
+}
 
 
 
@@ -291,8 +175,8 @@ class systems_setting(dict):
 SystemsInfo = {"{:s}-{:s}-{:d}".format(*s): systems_setting(*s) for s in systems}
 
 if "d-Au-200" in system_strs:
-    SystemsInfo["d-Au-200"]["run_id"] = "production_375pts_d_Au_200"
-    SystemsInfo["d-Au-200"]["run_dir"] = "production_375pts_d_Au_200"
+    SystemsInfo["d-Au-200"]["run_id"] = "production_414pts_d_Au_200"
+    SystemsInfo["d-Au-200"]["run_dir"] = "production_414pts_d_Au_200"
     SystemsInfo["d-Au-200"]["n_design"] = 414
     SystemsInfo["d-Au-200"]["n_validation"] = 5
     SystemsInfo["d-Au-200"]["design_remove_idx"] = [] #list(delete_design_pts_set)
@@ -302,8 +186,8 @@ if "d-Au-200" in system_strs:
 
 
 if "Au-Au-200" in system_strs:
-    SystemsInfo["Au-Au-200"]["run_id"] = "production_375pts_Au_Au_200"
-    SystemsInfo["Au-Au-200"]["run_dir"] = "production_375pts_Au_Au_200"
+    SystemsInfo["Au-Au-200"]["run_id"] = "production_414pts_Au_Au_200"
+    SystemsInfo["Au-Au-200"]["run_dir"] = "production_414pts_Au_Au_200"
     SystemsInfo["Au-Au-200"]["n_design"] = 414
     SystemsInfo["Au-Au-200"]["n_validation"] = 5
     SystemsInfo["Au-Au-200"]["design_remove_idx"] = [] #list(delete_design_pts_set)

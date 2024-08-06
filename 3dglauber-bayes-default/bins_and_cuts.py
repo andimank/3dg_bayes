@@ -122,20 +122,20 @@ obs_cent_list = {
         # "dNdeta_eta_cen_30_40_BRAH" : BRAHMS_mult_rap_bins,
         # "dNdeta_eta_cen_40_50_BRAH" : BRAHMS_mult_rap_bins,
 
-        # "dNdeta_eta_cen_00_05_BRAH_2" : BRAHMS_mult_rap_bins,
-        # "dNdeta_eta_cen_05_10_BRAH_2" : BRAHMS_mult_rap_bins,
-        # "dNdeta_eta_cen_10_20_BRAH_2" : BRAHMS_mult_rap_bins,
-        # "dNdeta_eta_cen_20_30_BRAH_2" : BRAHMS_mult_rap_bins,
-        # "dNdeta_eta_cen_30_40_BRAH_2" : BRAHMS_mult_rap_bins,
-        # "dNdeta_eta_cen_40_50_BRAH_2" : BRAHMS_mult_rap_bins,
+        # "dNdeta_eta_cen_00_05_2_BRAH" : BRAHMS_mult_rap_bins,
+        # "dNdeta_eta_cen_05_10_2_BRAH" : BRAHMS_mult_rap_bins,
+        # "dNdeta_eta_cen_10_20_2_BRAH" : BRAHMS_mult_rap_bins,
+        # "dNdeta_eta_cen_20_30_2_BRAH" : BRAHMS_mult_rap_bins,
+        # "dNdeta_eta_cen_30_40_2_BRAH" : BRAHMS_mult_rap_bins,
+        # "dNdeta_eta_cen_40_50_2_BRAH" : BRAHMS_mult_rap_bins,
         #
         #
-        # "dNdeta_eta_cen_00_05_BRAH_3" : BRAHMS_mult_rap_bins,
-        # "dNdeta_eta_cen_05_10_BRAH_3" : BRAHMS_mult_rap_bins,
-        # "dNdeta_eta_cen_10_20_BRAH_3" : BRAHMS_mult_rap_bins,
-        # "dNdeta_eta_cen_20_30_BRAH_3" : BRAHMS_mult_rap_bins,
-        # "dNdeta_eta_cen_30_40_BRAH_3" : BRAHMS_mult_rap_bins,
-        # "dNdeta_eta_cen_40_50_BRAH_3" : BRAHMS_mult_rap_bins,
+        # "dNdeta_eta_cen_00_05_3_BRAH" : BRAHMS_mult_rap_bins,
+        # "dNdeta_eta_cen_05_10_3_BRAH" : BRAHMS_mult_rap_bins,
+        # "dNdeta_eta_cen_10_20_3_BRAH" : BRAHMS_mult_rap_bins,
+        # "dNdeta_eta_cen_20_30_3_BRAH" : BRAHMS_mult_rap_bins,
+        # "dNdeta_eta_cen_30_40_3_BRAH" : BRAHMS_mult_rap_bins,
+        # "dNdeta_eta_cen_40_50_3_BRAH" : BRAHMS_mult_rap_bins,
 
 
         # "dNdeta_eta_cen_00_05_frwd_BRAH" : BRAHMS_mult_large_rap_bins,
