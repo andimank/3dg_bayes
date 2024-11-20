@@ -111,7 +111,7 @@ for design_split in ['./model_calculations/production_414pts_Au_Au_200/Obs/Simul
 
         # initialize the file by adding the first observable group to a dataframe
         if i == 0:
-            combined_df = pd.read_csv('./Text_files_MAP/' + file_name, skiprows=rows_skip_slice, usecols=cols_slice, header=None) # header=None leaves placeholder integer column names
+            combined_df = pd.read_csv('./Text_files_calculations/' + file_name, skiprows=rows_skip_slice, usecols=cols_slice, header=None) # header=None leaves placeholder integer column names
             # drop the last (dummy) column
             combined_df_cut = combined_df.drop(combined_df.columns[-1],axis=1)
 
@@ -119,7 +119,7 @@ for design_split in ['./model_calculations/production_414pts_Au_Au_200/Obs/Simul
 
         # add all the other observables by concatenating dataframes                                     # this should be updated
         else:
-            current_df = pd.read_csv('./Text_files_MAP/' + file_name, skiprows=rows_skip_slice, usecols=cols_slice, header=None) # header=None leaves placeholder integer column names
+            current_df = pd.read_csv('./Text_files_calculations/' + file_name, skiprows=rows_skip_slice, usecols=cols_slice, header=None) # header=None leaves placeholder integer column names
             # drop the last (dummy) column
             current_df_cut = current_df.drop(current_df.columns[-1],axis=1)                                                                                           # this should be updated
 

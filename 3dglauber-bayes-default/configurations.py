@@ -27,7 +27,7 @@ int_t = "<i8"
 complex_t = "<c16"
 
 # fix the random seed for cross validation, that sets are deleted consistently
-np.random.seed(1)
+np.random.seed()
 
 # Work, Design, and Exp directories
 workdir = Path(os.getenv("WORKDIR", "."))
